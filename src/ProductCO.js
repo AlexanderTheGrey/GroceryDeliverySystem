@@ -3,7 +3,7 @@ import './ProductCO.css'
 import { useStateValue } from "./StateProvider";
 import Rating from 'material-ui-rating';
 
-function ProductCO({ id, image, title, price, rating, quantity, hideButton }) {
+function ProductCO({ id, image, name, price, rating, quantity, hideButton }) {
     const [{ cart }, dispatch] = useStateValue();
 
     const removeFromCart = () => {
@@ -18,7 +18,7 @@ function ProductCO({ id, image, title, price, rating, quantity, hideButton }) {
             <img className='product-co_image' src={image} />
 
             <div className='product-co_info'>
-                <p className='product-co_title'>{title}</p>
+                <p className='product-co_name'>{name}</p>
                 <p className="product-co_price">
                     <small>$</small>
                     <strong>{price}</strong>
@@ -31,7 +31,7 @@ function ProductCO({ id, image, title, price, rating, quantity, hideButton }) {
                     <strong>{quantity}</strong>
                 </p>
                 {!hideButton && (
-                    <button onClick={removeFromCart}>Remove from Basket</button>
+                    <button onClick={removeFromCart}>Remove from Cart</button>
                 )}
             </div>
         </div>

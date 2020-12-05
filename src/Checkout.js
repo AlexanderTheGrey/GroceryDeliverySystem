@@ -1,6 +1,6 @@
 import React from "react";
 import "./Checkout.css";
-//import Subtotal from "./Subtotal";
+import ProceedToCheckout from "./ProceedToCheckout";
 import { useStateValue } from "./StateProvider";
 import ProductCO from "./ProductCO";
 
@@ -9,7 +9,7 @@ function Checkout() {
 
   return (
     <div className="checkout">
-      <div className="checkout_left">
+      <div className="checkout_items">
         <img
           className="checkout_picture"
           src=""
@@ -17,13 +17,12 @@ function Checkout() {
         />
 
         <div>
-          <h3>Hello, {user?.email}</h3>
-          <h2 className="checkout_title">Your shopping Cart</h2>
+          <h1 className="checkout_name">Shopping Cart</h1>
 
           {cart.map(item => (
             <ProductCO
               id={item.id}
-              title={item.title}
+              name={item.name}
               image={item.image}
               price={item.price}
               rating={item.rating}
@@ -34,7 +33,9 @@ function Checkout() {
         </div>
       </div>
 
-      
+      <div className="checkout_proceed">
+        <ProceedToCheckout />
+      </div>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import "./Product.css";
 import { useStateValue } from "./StateProvider";
 import Rating from 'material-ui-rating';
 
-function Product({ id, title, image, price, rating, quantity }) {
+function Product({ id, name, image, price, rating, quantity, description }) {
   const [{ cart }, dispatch] = useStateValue();
 
   const addToCart = () => {
@@ -13,11 +13,12 @@ function Product({ id, title, image, price, rating, quantity }) {
       type: "ADD_TO_CART",
       item: {
         id: id,
-        title: title,
+        name: name,
         image: image,
         price: price,
         rating: rating,
         quantity: quantity,
+        description: description
       },
       id: id
     });
@@ -26,7 +27,7 @@ function Product({ id, title, image, price, rating, quantity }) {
   return (
     <div className="product">
       <div className="product_info">
-        <p>{title}</p>
+        <p>{name}</p>
         <p className="product_price">
           <small>$</small>
           <strong>{price}</strong>

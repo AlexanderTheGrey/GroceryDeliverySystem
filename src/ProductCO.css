@@ -9,10 +9,10 @@
 }
 
 .product-co_info > button {
-    background: #f0c14b;
+    background: #6c95bb;
     border: 1px solid;
     margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
+    border-color:#543d7a #096c71 #082e58;
     color: #111;
 }
 
@@ -26,7 +26,7 @@
     display: flex;
   }
 
-.product-co_title {
+.product-co_name {
     font-size: 17px;
     font-weight: 800;
 }

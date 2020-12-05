@@ -4,17 +4,13 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { header_Search } from "./Header_Search";
 
 function Header() {
   const [{ cart, cartQuantity, user, searchTerm}, dispatch] = useStateValue();
 
   console.log("CQ " + cartQuantity)
-  const updateSearchTerm = event => {
-      dispatch({
-        type: "SEARCH",
-        searchTerm: event.target.value
-      });
-    };
+  
 
   return (
     <div className="header">
@@ -25,13 +21,7 @@ function Header() {
         />
       </Link>
 
-      <div className="header_search">
-        <input className="header_searchInput" type="text" 
-          placeholder = "Search"
-          value = {searchTerm}
-          onChange={updateSearchTerm}/>
-        <SearchIcon className="header_searchIcon" />
-      </div>
+      <header_Search/>
 
       <div className="header_navigation">
         <Link to={!user && '/login'}>

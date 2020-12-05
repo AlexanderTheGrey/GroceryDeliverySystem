@@ -5,6 +5,7 @@ import { useStateValue } from "./StateProvider";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Checkout from "./Checkout";
+import Search from "./Search";
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
           <Route exact path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route exact path="/search">
+            <Header />
+            <Search />
           </Route>
         </Switch>
       </div>

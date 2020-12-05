@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
+import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 
 function HeaderSearch() {
@@ -19,7 +20,9 @@ function HeaderSearch() {
           placeholder = "Search"
           value = {searchTerm}
           onChange={updateSearchTerm}/>
-        <SearchIcon className="header_searchIcon" />
+        <Link to="/Search" className="header_searchIcon">
+          <SearchIcon />
+        </Link>
       </div>
   );
 }

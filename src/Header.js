@@ -6,9 +6,15 @@ import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 
 function Header() {
-  const [{ cart, cartQuantity, user }, dispatch] = useStateValue();
+  const [{ cart, cartQuantity, user, searchTerm}, dispatch] = useStateValue();
 
   console.log("CQ " + cartQuantity)
+  const updateSearchTerm = event => {
+      dispatch({
+        type: "SEARCH",
+        searchTerm: event.target.value
+      });
+    };
 
   return (
     <div className="header">
@@ -20,7 +26,10 @@ function Header() {
       </Link>
 
       <div className="header_search">
-        <input className="header_searchInput" type="text" />
+        <input className="header_searchInput" type="text" 
+          placeholder = "Search"
+          value = {searchTerm}
+          onChange={updateSearchTerm}/>
         <SearchIcon className="header_searchIcon" />
       </div>
 

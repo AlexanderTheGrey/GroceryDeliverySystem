@@ -1,7 +1,8 @@
 export const initialState = {
   cart: [],
   cartQuantity: 0,
-  user: null
+  user: null,
+  searchTerm: ""
 };
 
 export const getCartTotal = (cart) => // Optionally select cart to total the items for the checkout page
@@ -11,6 +12,14 @@ const reducer = (state, action) => { // Reducer updates the data layer based on 
   console.log(action);
   console.log(state.cart)
   switch (action.type) {
+    
+    case "SEARCH":
+      state.searchTerm = action.searchTerm
+      return {
+        ...state,
+        searchTerm: action.searchTerm,
+      };
+
     case "ADD_TO_CART":
 
       state.cartQuantity += 1

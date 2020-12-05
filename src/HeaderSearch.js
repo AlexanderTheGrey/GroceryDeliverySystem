@@ -1,8 +1,10 @@
 import React from "react";
+import "./Header.css";
+import SearchIcon from "@material-ui/icons/Search";
 import { useStateValue } from "./StateProvider";
 
-function header_Search() {
-  const [{ cart, user }, dispatch] = useStateValue();
+function HeaderSearch() {
+  const [{ searchTerm }, dispatch] = useStateValue();
 
   const updateSearchTerm = event => {
       dispatch({
@@ -22,4 +24,4 @@ function header_Search() {
   );
 }
 
-export default header_Search;
+export default HeaderSearch;

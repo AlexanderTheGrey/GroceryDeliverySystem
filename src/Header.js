@@ -1,13 +1,12 @@
 import React from "react";
 import "./Header.css";
-import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
-import { header_Search } from "./Header_Search";
+import HeaderSearch from "./HeaderSearch";
 
 function Header() {
-  const [{ cart, cartQuantity, user, searchTerm}, dispatch] = useStateValue();
+  const [{ cart, cartQuantity, user}, dispatch] = useStateValue();
 
   console.log("CQ " + cartQuantity)
   
@@ -21,7 +20,7 @@ function Header() {
         />
       </Link>
 
-      <header_Search/>
+      <HeaderSearch/>
 
       <div className="header_navigation">
         <Link to={!user && '/login'}>

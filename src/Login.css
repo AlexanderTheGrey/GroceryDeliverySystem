@@ -1,0 +1,13 @@
+.LoginBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  height: max-content;
+  width: 200px;
+}
+
+.LoginBox > Button {
+  margin-top: 20px;
+}

@@ -7,6 +7,7 @@ import Home from "./Home";
 import Checkout from "./Checkout";
 import Search from "./Search";
 import BrowseCategory from "./BrowseCategory"
+import Login from "./Login"
 
 function App() {
 
@@ -31,6 +32,10 @@ function App() {
           <Route exact path="/BrowseCategory">
             <Header />
             <BrowseCategory />
+          </Route>
+          <Route exact path="/Login">
+            <Header />
+            <Login />
           </Route>
         </Switch>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
 import ProductCategory from './ProductCategory'
-import productcategorylist from './productcategorylist'
+import ProductCategoryList from './ProductCategoryList'
 
 function Home() {
   return (
@@ -13,7 +13,7 @@ function Home() {
         />
 
         <div className="home_group">
-        {productcategorylist.map((cat) =>(
+        {ProductCategoryList.map((cat) =>(
             <ProductCategory
               name={cat}
             />

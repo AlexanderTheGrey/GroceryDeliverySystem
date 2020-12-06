@@ -7,7 +7,7 @@ export const initialState = {
 };
 
 export const getCartTotal = (cart) => // Optionally select cart to total the items for the checkout page
-  cart?.reduce((amount, item) => item.price + amount, 0);
+  cart?.reduce((amount, item) => item.price * item.quantity + amount, 0);
 
 const reducer = (state, action) => { // Reducer updates the data layer based on a defined action
   console.log(action);
@@ -77,6 +77,12 @@ const reducer = (state, action) => { // Reducer updates the data layer based on 
       return {
         ...state,
         cart: newCartRemove
+      }
+
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user
       }
 
     default:

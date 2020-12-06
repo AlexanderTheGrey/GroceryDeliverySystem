@@ -16,17 +16,17 @@ function ProductCategory({ name }) {
 
   let catProducts = productlist.filter(pd => 
     pd.category.toLowerCase().includes(name))
+  let firstProducts = catProducts.slice(0,4)
 
   return (
-    <div className="ProductCategory">
-        <Link to="/BrowseCategory" onClick={setCategory}>
-          <p>{name}</p>
-          {catProducts.map((prod) =>(
-            <img src={prod.image} alt="" className="CategoryImg"/>
-          ))}
-          
+        <Link to="/BrowseCategory" className="ProductCategory" onClick={setCategory}>
+            <p>{name}</p>
+            <div className="CategoryImages">
+                {firstProducts.map((prod) =>(
+                    <img src={prod.image} alt="" />
+                ))}
+            </div>  
         </Link>
-    </div>
   );
 }
 

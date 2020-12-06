@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
-import Product from "./Product";
-import productlist from './productlist'
+import ProductCategory from './ProductCategory'
+import productcategorylist from './productcategorylist'
 
 function Home() {
   return (
@@ -13,14 +13,9 @@ function Home() {
         />
 
         <div className="home_group">
-        {productlist.map((pd) =>(
-            <Product
-              id={pd.id}
-              name={pd.name}
-              image={pd.image}
-              price={pd.price}
-              rating={pd.rating}
-              description={pd.description}
+        {productcategorylist.map((cat) =>(
+            <ProductCategory
+              name={cat}
             />
           ))}
         </div>

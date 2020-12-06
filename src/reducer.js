@@ -2,7 +2,8 @@ export const initialState = {
   cart: [],
   cartQuantity: 0,
   user: null,
-  searchTerm: ""
+  searchTerm: "",
+  browseCategory: ""
 };
 
 export const getCartTotal = (cart) => // Optionally select cart to total the items for the checkout page
@@ -12,7 +13,13 @@ const reducer = (state, action) => { // Reducer updates the data layer based on 
   console.log(action);
   console.log(state.cart)
   switch (action.type) {
-    
+    case "BROWSE":
+      state.browseCategory = action.browseCategory
+      return {
+        ...state,
+        browseCategory: action.browseCategory,
+      };
+
     case "SEARCH":
       state.searchTerm = action.searchTerm
       return {

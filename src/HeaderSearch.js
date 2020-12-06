@@ -20,7 +20,7 @@ function HeaderSearch() {
           placeholder = "Search"
           value = {searchTerm}
           onChange={updateSearchTerm}/>
-        <Link to="/Search" className="header_searchIcon">
+        <Link to="/search">
           <SearchIcon />
         </Link>
       </div>

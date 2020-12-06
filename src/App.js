@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Home";
 import Checkout from "./Checkout";
 import Search from "./Search";
+import BrowseCategory from "./BrowseCategory"
 
 function App() {
 
@@ -26,6 +27,10 @@ function App() {
           <Route exact path="/search">
             <Header />
             <Search />
+          </Route>
+          <Route exact path="/BrowseCategory">
+            <Header />
+            <BrowseCategory />
           </Route>
         </Switch>
       </div>

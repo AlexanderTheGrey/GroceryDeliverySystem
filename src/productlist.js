@@ -7,6 +7,7 @@ let products =
         price: 4.99,
         rating: 2.5,
         description: "Rich green broccoli",
+        category: "produce",
     },
     {
     	id: "00000002",
@@ -15,6 +16,7 @@ let products =
         price: 9.99,
         rating: 3.5,
         description: "Juicy chicken",
+        category: "meat",
     },
 ];
 export default products;

@@ -4,19 +4,17 @@ import Product from "./Product";
 import { useStateValue } from "./StateProvider";
 import productlist from './productlist'
 
-function Search() {
-  const [{ searchTerm }, dispatch] = useStateValue();
+function BrowseCategory() {
+  const [{ browseCategory }, dispatch] = useStateValue();
   // getSearchReults
-  let searchResults = productlist.filter(pd => 
-    pd.description.toLowerCase().includes(searchTerm) ||
-    pd.name.toLowerCase().includes(searchTerm) ||
-    pd.category.toLowerCase().includes(searchTerm))
+  let categoryProducts = productlist.filter(pd => 
+    pd.category.toLowerCase().includes(browseCategory))
 
   return (
     <div className="search">
       
 
-      {searchResults.map(item => (
+      {categoryProducts.map(item => (
             <Product
               id={item.id}
               name={item.name}
@@ -30,4 +28,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default BrowseCategory;

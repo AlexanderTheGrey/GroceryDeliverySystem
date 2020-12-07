@@ -33,6 +33,8 @@ function Payment() {
         getClientSecret();
     }, [cart])
 
+    console.log('THE SECSSSSSSSSSSSSSSSSRET IS >>>', clientSecret)
+
     const handleSubmit = async (event) => {  // This runs upon submitting payment
         event.preventDefault();
         setProcessing(true);

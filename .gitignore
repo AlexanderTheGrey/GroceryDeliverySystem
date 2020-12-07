@@ -25,5 +25,6 @@ yarn-error.log*
 # windows temp files
 ~$*
 
-# create react app extra files
+# cache files
 .eslintcache
+/.firebase

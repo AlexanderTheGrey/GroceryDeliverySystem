@@ -2,7 +2,7 @@ import React from "react";
 import "./Category.css";
 import { useStateValue } from "./StateProvider";
 import { Link } from "react-router-dom";
-import productlist from './ProductList'
+import productList from './ProductList'
 
 function ProductCategory({ name }) {
   const [{ browseCategory }, dispatch] = useStateValue();
@@ -14,7 +14,7 @@ function ProductCategory({ name }) {
     });
   };
 
-  let catProducts = productlist.filter(pd => 
+  let catProducts = productList.filter(pd => 
     pd.category.toLowerCase().includes(name))
   let firstProducts = catProducts.slice(0,4)
 

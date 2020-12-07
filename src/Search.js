@@ -2,12 +2,12 @@ import React from "react";
 import "./Home.css";
 import Product from "./Product";
 import { useStateValue } from "./StateProvider";
-import productlist from './ProductList'
+import productList from './ProductList'
 
 function Search() {
   const [{ searchTerm }, dispatch] = useStateValue();
   // getSearchReults
-  let searchResults = productlist.filter(pd => 
+  let searchResults = productList.filter(pd => 
     pd.description.toLowerCase().includes(searchTerm) ||
     pd.name.toLowerCase().includes(searchTerm) ||
     pd.category.toLowerCase().includes(searchTerm))

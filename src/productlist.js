@@ -7,7 +7,7 @@ let products =
         price: 4.99,
         rating: 2.5,
         description: "Rich green broccoli",
-        category: "produce",
+        category: "Vegetables",
     },
     {
     	id: "00000002",
@@ -16,7 +16,7 @@ let products =
         price: 9.99,
         rating: 3.5,
         description: "Juicy chicken",
-        category: "Meat",
+        category: "Meat & Seafood",
     },
     {
         id: "00000003",
@@ -25,6 +25,7 @@ let products =
         price: 2.49,
         rating: 4.7,
         description: "Juicy Orange",
+        category: "Fruit"
     },
     {
         id: "00000004",
@@ -744,7 +745,7 @@ let products =
         price: 1.48,
         rating: 4.2,
         description: "Organic",
-        category: "Fruits",
+        category: "Fruit",
     },
     {
         id:"00000084",
@@ -924,8 +925,7 @@ let products =
         price: 5.29,
         rating: 5.0,
         description: "16 Oz",
-        category: "Fruit",
-        category: "meat",
+        category: "Canned & Packaged",
     },
 ];
 export default products;

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Home.css";
+import "./Search.css";
 import Product from "./Product";
 import { useStateValue } from "./StateProvider";
 import productList from './ProductList';

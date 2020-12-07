@@ -392,7 +392,7 @@ let products =
         image: "https://images-na.ssl-images-amazon.com/images/I/81WSN5pFP0L._SL1500_.jpg",
         price: 6.99,
         rating: 4.5,
-        description="12 oz",
+        description: "12 oz",
         category: "Meat & Seafood",
     },
     {

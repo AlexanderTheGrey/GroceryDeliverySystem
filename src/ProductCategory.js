@@ -2,7 +2,7 @@ import React from "react";
 import "./Category.css";
 import { useStateValue } from "./StateProvider";
 import { Link } from "react-router-dom";
-import productlist from './productlist'
+import productlist from './ProductList'
 
 function ProductCategory({ name }) {
   const [{ browseCategory }, dispatch] = useStateValue();

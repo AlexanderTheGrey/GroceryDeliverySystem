@@ -3,13 +3,12 @@ import "./Product.css";
 import { useStateValue } from "./StateProvider";
 import Rating from 'material-ui-rating';
 
-function Product({ id, name, image, price, rating, quantity, description }) {
+function Product({ id, name, image, price, rating, quantity, description, category }) {
   const [{ cart }, dispatch] = useStateValue();
 
   const addToCart = () => {
-    // Send new item added to the global data layer
     quantity = 1
-    dispatch({
+    dispatch({  // Send the new item added to the global data layer
       type: "ADD_TO_CART",
       item: {
         id: id,
@@ -18,7 +17,8 @@ function Product({ id, name, image, price, rating, quantity, description }) {
         price: price,
         rating: rating,
         quantity: quantity,
-        description: description
+        description: description,
+        category: category,
       },
       id: id
     });

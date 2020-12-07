@@ -2,12 +2,13 @@ import React from "react";
 import "./ProceedToCheckout.css";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "./StateProvider";
-import { getCartTotal } from "./reducer";
 import { useHistory } from "react-router-dom";
 
 function ProceedToCheckout() {
   const history = useHistory();
-  const [{ cart }, dispatch] = useStateValue();
+  const [{ cart, cartTotal }, dispatch] = useStateValue();
+
+  console.log("SDFSDFSDFSDFSF", cartTotal.toFixed(2))
 
   return (
     <div className="proceedToCheckout">
@@ -23,7 +24,7 @@ function ProceedToCheckout() {
           </>
         )}
         decimalScale={2}
-        value={getCartTotal(cart)}
+        value={cartTotal}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}

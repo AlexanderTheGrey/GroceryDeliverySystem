@@ -9,7 +9,7 @@ import { auth } from "./FirebaseDeployment";
 function Header() {
   const [{ cart, cartQuantity, user}, dispatch] = useStateValue();
   
-  const handleSignOut = () => {
+  const handleSignOut = () => { // Change the header on Sign Out
     if (user) {
       auth.signOut();
     }
@@ -30,7 +30,7 @@ function Header() {
         <Link to={!user && '/login'}>
           <div onClick={handleSignOut} className="header_option">
             <span className="header_Line1Style">Hello {!user ? 'Guest' : user.email}</span>
-            <span className="header_Line2Style">{user ? 'Sign out' : 'Sign in'}</span>
+            <span className="header_Line2Style">{user ? 'Sign Out' : 'Sign In'}</span>
           </div>
         </Link>
 

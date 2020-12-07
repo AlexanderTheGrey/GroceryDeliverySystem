@@ -1,17 +1,15 @@
 export const initialState = {
   cart: [],
   cartQuantity: 0,
+  cartTotal: 0,
   user: null,
   searchTerm: "",
   browseCategory: ""
 };
 
-export const getCartTotal = (cart) => // Optionally select cart to total the items for the checkout page
-  cart?.reduce((amount, item) => item.price * item.quantity + amount, 0);
-
 const reducer = (state, action) => { // Reducer updates the data layer based on a defined action
-  console.log(action);
-  console.log(state.cart)
+  console.log("ACTION", action);
+  console.log("CART STATE BEFORE ADD", state.cart)
   switch (action.type) {
     case "BROWSE":
       state.browseCategory = action.browseCategory
@@ -30,6 +28,8 @@ const reducer = (state, action) => { // Reducer updates the data layer based on 
     case "ADD_TO_CART":
 
       state.cartQuantity += 1
+
+      state.cartTotal += action.item.price
 
       const indexAdd = state.cart.findIndex(
         (cartItem) => cartItem.id === action.id
@@ -59,6 +59,7 @@ const reducer = (state, action) => { // Reducer updates the data layer based on 
 
       if(state.cartQuantity > 0){
         state.cartQuantity -= 1
+        state.cartTotal -= action.item.price
       }
 
       const indexRemove = state.cart.findIndex(
@@ -77,6 +78,14 @@ const reducer = (state, action) => { // Reducer updates the data layer based on 
       return {
         ...state,
         cart: newCartRemove
+      }
+
+    case 'EMPTY_CART':
+      return {
+        ...state,
+        cart: [],
+        cartQuantity: 0,
+        cartTotal: 0,
       }
 
     case "SET_USER":

@@ -10,6 +10,9 @@ function ProductCO({ id, image, name, price, rating, quantity, hideButton }) {
         dispatch({
             type: 'REMOVE_FROM_CART',
             id: id,
+            item: {
+                price,
+            },
         })
     }
 

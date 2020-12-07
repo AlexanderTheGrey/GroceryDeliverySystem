@@ -1,4 +1,4 @@
-let products = 
+let products = // This could actually be put in the NoSQL database and rendered out through API calls
 [
 	{
 		id: "00000001",

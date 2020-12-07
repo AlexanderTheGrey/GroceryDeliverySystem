@@ -47,7 +47,7 @@
 .header_optionCart {
   display: flex;
   align-items: center;
-  color: rgba(0, 110, 101, 0.938);
+  color: rgba(255, 255, 255, 0.938);
 }
 
 .header_cartCount {

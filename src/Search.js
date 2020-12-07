@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import Product from "./Product";
 import { useStateValue } from "./StateProvider";
-import productlist from './productlist'
+import productlist from './ProductList'
 
 function Search() {
   const [{ searchTerm }, dispatch] = useStateValue();
